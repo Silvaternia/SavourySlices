@@ -3,13 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileCNav = document.getElementById('mobileNav');
     const navContainer = document.querySelectorAll('#headerNav');
 
-
     menuToggle.addEventListener('click', () => {
         mobileCNav.classList.toggle('hidden');
     });
 
     const navItems = {
-        'Home': './../../public/index.html',
+        'Home': '/index.html',
         'Categories': '#',
         'Best sellers': '#',
         'Search': '#',
