@@ -1,5 +1,7 @@
 export function validateInputs({ title, description, price, stock, image }) {
-    const isValidString = (str) => /^[a-zA-Z0-9\s]+$/.test(str);
+    // Using regex to validate 
+    const regexFormat = /^[a-zA-Z0-9\s.\-_:@/?&=+%$#*]+$/i;
+    const isValidString = (str) => regexFormat.test(str);
     const isValidFloat = (num) => !isNaN(num) && parseFloat(num) == num;
     const isValidInt = (num) => !isNaN(num) && parseInt(num) == num;
 
@@ -9,7 +11,7 @@ export function validateInputs({ title, description, price, stock, image }) {
     }
 
     if (!isValidString(title) || !isValidString(description) || !isValidString(image)) {
-        alert('Title, description, and image must be valid strings without special characters.');
+        alert('Title, description, and image must be valid strings.');
         return false;
     }
 

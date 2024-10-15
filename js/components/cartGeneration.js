@@ -8,25 +8,16 @@ export async function generateCart(products) {
     const container = document.getElementById('shopcart-container');
     container.innerHTML = '';
     // There might be a better way to fix my image issues but this is the quickest solution I found that workes
-    function adjustImagePath(imagePath) {
-        if (!imagePath) {
-            return '';
-        }
-        if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
-            return imagePath;
-        }
-        return `../${imagePath}`;
-    }
+  
     products.forEach(product => {
         if (!product) return;
 
         const cart = document.createElement('div');
         cart.classList.add('flex', 'border', 'rounded', 'shadow-sm', 'p-4', 'mb-4', 'items-center');
 
-        const adjustedImagePath = adjustImagePath(product.image);
 
         cart.innerHTML = `
-            <img src="${adjustedImagePath}" alt="${product.title}" class="w-24 h-24 object-cover mr-4">
+            <img src="${product.image}" alt="${product.title}" class="w-24 h-24 object-cover mr-4">
             <div class="flex-grow">
                 <h2 class="text-lg md:text-xl text-darkGrey font-bold">${product.title}</h2>
                 <p class="text-sm sm:text-base text-gray-600">${product.description}</p>

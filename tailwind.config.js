@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./public/*.html", "./node_modules/flowbite/**/*.js"],
+  content: [
+    "./js/**/*.{html,js}",
+    "./public/**/*.html",
+    "./node_modules/flowbite/**/*.js"
+  ],
   theme: {
     extend: {
       colors: {
@@ -11,12 +15,12 @@ module.exports = {
         "darkGrey": '#333333',
       },
       backgroundImage: {
-        'hero-image': "url(../assets/images/IceSteak.jpg)",
-        'breakfast': "url(../../src/assets/images/Catagory-Breakfast.jpg)"
+        'hero-image': "url(../assets/images/IceSteak.webp)",
+        'breakfast': "url(../assets/images/Catagory-Breakfast.webp)",
       }
     },
   },
   plugins: [
     require('flowbite/plugin')
   ]
-}
+};

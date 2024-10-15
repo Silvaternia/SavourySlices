@@ -1,8 +1,8 @@
-import { fetchProducts } from './data/fetchProducts.js';
-import { deleteLocStorageKey, resetStorage } from './data/locStorage.js';
-import { editProduct } from './data/editProduct.js';
-import { generateTable } from './components/tableGeneration.js';
-import { updateProductTable } from './data/updateStorage.js';
+import { fetchProducts } from '../data/fetchProducts.js';
+import { deleteLocStorageKey, resetStorage } from '../data/locStorage.js';
+import { editProduct } from './editProduct.js';
+import { generateTable } from '../components/tableGeneration.js';
+import { updateProductTable } from '../data/updateStorage.js';
 
 const resetButton = document.getElementById('resetStorage');
 resetButton.addEventListener('click', () => {

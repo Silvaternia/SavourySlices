@@ -1,5 +1,5 @@
-import { setLocStorage } from './locStorage.js';
-import { fetchProducts } from './fetchProducts.js';
+import { setLocStorage } from '../data/locStorage.js';
+import { fetchProducts } from '../data/fetchProducts.js';
 import { validateInputs } from '../data/validateInput.js';
 
 function getFormValues() {

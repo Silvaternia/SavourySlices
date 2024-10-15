@@ -1,7 +1,7 @@
 {
     "scripts": {
-        "watch": "tailwindcss -i src/css/input.css -o src/css/output.css --watch",
-        "build": "tailwindcss -i src/css/input.css -o src/css/output.css --minify"
+        "watch": "tailwindcss -i ./css/input.css -o ./css/output.css --watch",
+        "build": "tailwindcss -i ./css/input.css -o ./css/output.css --minify"
     },
     "devDependencies": {
         "@eslint/js": "^9.12.0",

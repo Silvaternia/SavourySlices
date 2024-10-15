@@ -1312,10 +1312,6 @@ input:checked + .toggle-bg {
   height: 6rem;
 }
 
-.h-3 {
-  height: 0.75rem;
-}
-
 .h-3\.5 {
   height: 0.875rem;
 }
@@ -1370,10 +1366,6 @@ input:checked + .toggle-bg {
 
 .w-24 {
   width: 6rem;
-}
-
-.w-3 {
-  width: 0.75rem;
 }
 
 .w-3\.5 {
@@ -1774,12 +1766,41 @@ input:checked + .toggle-bg {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-darkGrey {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 51 51 / var(--tw-bg-opacity));
+}
+
+.bg-darkGrey\/45 {
+  background-color: rgb(51 51 51 / 0.45);
+}
+
+.bg-darkGrey\/80 {
+  background-color: rgb(51 51 51 / 0.8);
+}
+
+.bg-darkGrey\/20 {
+  background-color: rgb(51 51 51 / 0.2);
+}
+
+.bg-darkGrey\/30 {
+  background-color: rgb(51 51 51 / 0.3);
+}
+
+.bg-darkGrey\/25 {
+  background-color: rgb(51 51 51 / 0.25);
+}
+
 .bg-breakfast {
-  background-image: url(../../src/assets/images/Catagory-Breakfast.jpg);
+  background-image: url(../assets/images/Catagory-Breakfast.webp);
 }
 
 .bg-hero-image {
-  background-image: url(../assets/images/IceSteak.jpg);
+  background-image: url(../assets/images/IceSteak.webp);
+}
+
+.bg-cover {
+  background-size: cover;
 }
 
 .bg-center {

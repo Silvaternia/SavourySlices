@@ -2,7 +2,7 @@ import { generateCart } from '../components/cartGeneration.js';
 import { getLocStorage, updateCartIndicator } from './locStorage.js';
 import { fetchProducts } from './fetchProducts.js';
 
-async function getCartProducts() {
+export async function getCartProducts() {
     const allProducts = await fetchProducts();
     const cartItems = getLocStorage('cart') || [];
 

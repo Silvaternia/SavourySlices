@@ -1,4 +1,3 @@
-const cartList = JSON.parse(localStorage.getItem("Cart")) || [];
 const cartIndicator = document.getElementById("cart-indicator");
 
 export async function setLocStorage(key, value) {
@@ -61,6 +60,7 @@ export function removeFromCart(productId) {
 }
 
 export function addToCart(productId) {
+    const cartList = JSON.parse(localStorage.getItem("cart")) || [];
     try {
         cartList.push(productId);
         setLocStorage("cart", cartList);

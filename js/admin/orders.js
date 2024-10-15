@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const orders = JSON.parse(localStorage.getItem('orders')) || [];
+    const ordersData = localStorage.getItem('orders');
+    const orders = ordersData ? JSON.parse(ordersData) : [];
     const tbody = document.querySelector('tbody');
 
-    orders.forEach(order => {
-        if (!order) return;
-        
+    const createOrderRow = (order) => {
         const orderDiv = document.createElement('tr');
         orderDiv.classList.add('border-b');
         orderDiv.innerHTML = `
@@ -12,6 +11,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <td class="px-6 py-3">${order.total}</td>
                 <td class="px-6 py-3">${order.date}</td>
             `;
-        tbody.appendChild(orderDiv);
+        return orderDiv;
+    };
+    orders.forEach(order => {
+        if (!order) return;
+        const orderRow = createOrderRow(order);
+        tbody.appendChild(orderRow);
     });
 });
