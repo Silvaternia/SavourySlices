@@ -1,7 +1,8 @@
 {
     "scripts": {
-        "watch": "tailwindcss -i ./css/input.css -o ./css/output.css --watch",
-        "build": "tailwindcss -i ./css/input.css -o ./css/output.css --minify"
+        "watch": "tailwindcss -i ./public/css/input.css -o ./css/output.css --watch",
+        "build": "tailwindcss -i ./css/input.css -o ./css/output.css --minify && npm run copy-flowbite",
+        "copy-flowbite": "cp ./node_modules/flowbite/dist/flowbite.min.js ./js/flowbite.min.js"
     },
     "devDependencies": {
         "@eslint/js": "^9.12.0",
