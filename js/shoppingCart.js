@@ -32,7 +32,6 @@ function confirmOrder(buttonOrder) {
         buttonOrder.addEventListener('click', async () => {
             const orders = JSON.parse(localStorage.getItem('orders')) || [];
             const cart = await getLocStorage('cart') || [];
-            console.log(cart);
 
             const formattedOrder = formatOrder(cart, orders.length);
 

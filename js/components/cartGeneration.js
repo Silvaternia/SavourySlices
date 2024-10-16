@@ -4,11 +4,11 @@ import { loadCartData } from '../data/loadShopCart.js';
 
 export async function generateCart(products) {
     if (!products) return;
-    
-    const container = document.getElementById('shopcart-container');
+
+    const container = document.getElementById('shopcartContainer');
     container.innerHTML = '';
     // There might be a better way to fix my image issues but this is the quickest solution I found that workes
-  
+
     products.forEach(product => {
         if (!product) return;
 
