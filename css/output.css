@@ -1714,6 +1714,10 @@ input:checked + .toggle-bg {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
+.bg-gray-800\/30 {
+  background-color: rgb(31 41 55 / 0.3);
+}
+
 .bg-gray-900\/50 {
   background-color: rgb(17 24 39 / 0.5);
 }
@@ -1764,31 +1768,6 @@ input:checked + .toggle-bg {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-darkGrey {
-  --tw-bg-opacity: 1;
-  background-color: rgb(51 51 51 / var(--tw-bg-opacity));
-}
-
-.bg-darkGrey\/45 {
-  background-color: rgb(51 51 51 / 0.45);
-}
-
-.bg-darkGrey\/80 {
-  background-color: rgb(51 51 51 / 0.8);
-}
-
-.bg-darkGrey\/20 {
-  background-color: rgb(51 51 51 / 0.2);
-}
-
-.bg-darkGrey\/30 {
-  background-color: rgb(51 51 51 / 0.3);
-}
-
-.bg-darkGrey\/25 {
-  background-color: rgb(51 51 51 / 0.25);
 }
 
 .bg-breakfast {
