@@ -1216,11 +1216,6 @@ input:checked + .toggle-bg {
   margin-right: auto;
 }
 
-.my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1498,10 +1493,6 @@ input:checked + .toggle-bg {
 
 .flex-col {
   flex-direction: column;
-}
-
-.content-center {
-  align-content: center;
 }
 
 .items-start {
@@ -2439,19 +2430,9 @@ input:checked + .toggle-bg {
     padding-bottom: 0.5rem;
   }
 
-  .sm\:py-4 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
   .sm\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-  }
-
-  .sm\:py-2\.5 {
-    padding-top: 0.625rem;
-    padding-bottom: 0.625rem;
   }
 
   .sm\:text-3xl {
