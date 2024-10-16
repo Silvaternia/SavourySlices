@@ -4,20 +4,30 @@ import { editProduct } from './editProduct.js';
 import { generateTable } from '../components/tableGeneration.js';
 import { updateProductTable } from '../data/updateStorage.js';
 
-const resetButton = document.getElementById('resetStorage');
+const resetButton = document.getElementById('buttonResetStorage');
 resetButton.addEventListener('click', () => {
     resetStorage();
     updateProductTable();
 });
 
+function clearFormFields() {
+    document.getElementById('title').value = '';
+    document.getElementById('description').value = '';
+    document.getElementById('price').value = '';
+    document.getElementById('stock').value = '';
+    document.getElementById('image').value = '';
+}
+
+function hideModal(modal) {
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+}
 document.querySelector('table').addEventListener('click', async (event) => {
-    const target = event.target;
+    const target = event.target.closest('button');
+    if (!target) return;
 
-    if (target.id === 'edit-product') {
-        editProduct("products", target.dataset.productId);
-        updateProductTable();
 
-    } else if (target.id === 'remove-product') {
+    if (target.id === 'deleteProduct') {
         deleteLocStorageKey("products", target.dataset.productId);
         await fetchProducts();
         updateProductTable();
@@ -27,19 +37,15 @@ document.querySelector('table').addEventListener('click', async (event) => {
 
 document.getElementById('confirmEdit').addEventListener('click', (event) => {
     event.preventDefault();
+
     const modal = document.getElementById('form-input-modal');
     const productId = modal.getAttribute('data-product-id');
+
     editProduct(productId);
     alert('Product updated!');
 
-    document.getElementById('title').value = '';
-    document.getElementById('description').value = '';
-    document.getElementById('price').value = '';
-    document.getElementById('stock').value = '';
-    document.getElementById('image').value = '';
-
-    modal.classList.add('hidden');
-    modal.setAttribute('aria-hidden', 'true');
+    clearFormFields();
+    hideModal(modal);
 }
 
 );

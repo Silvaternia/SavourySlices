@@ -3,7 +3,7 @@
         "title": "Dry Salted Breakfast Bacon",
         "price": "2.75",
         "description": "Estimated SLT: 9 days",
-        "image": "/assets/images/Catagory-Breakfast.webp",
+        "image": "./assets/images/Catagory-Breakfast.webp",
         "id": "1",
         "stock": "10"
     },
@@ -11,7 +11,7 @@
         "title": "BBQ Sausage",
         "price": "3.50",
         "description": "Estimated SLT: 14 days",
-        "image": "/assets/images/Catagory-Meat.webp",
+        "image": "./assets/images/Catagory-Meat.webp",
         "id": "2",
         "stock": "5"
     },
@@ -19,7 +19,7 @@
         "title": "Cured Ham",
         "price": "4.25",
         "description": "Estimated SLT: 21 days",
-        "image": "/assets/images/Catagory-Ham.webp",
+        "image": "./assets/images/Catagory-Ham.webp",
         "id": "3",
         "stock": "2"
     },
@@ -27,7 +27,7 @@
         "title": "Grilled Chicken Breast",
         "price": "5.00",
         "description": "Estimated SLT: 7 days",
-        "image": "/assets/images/Catagory-Chicken.webp",
+        "image": "./assets/images/Catagory-Chicken.webp",
         "id": "4",
         "stock": "3"
     },
@@ -35,7 +35,7 @@
         "title": "Prosciutto",
         "price": "6.75",
         "description": "Estimated SLT: 28 days",
-        "image": "/assets/images/Catagory-Deli.webp",
+        "image": "./assets/images/Catagory-Deli.webp",
         "id": "5",
         "stock": "8"
     }

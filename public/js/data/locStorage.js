@@ -23,15 +23,17 @@ export function getLocStorage(key) {
         }
     }
 }
-
-export async function deleteLocStorageKey(key, value) {
-    if (value) {
+export async function deleteLocStorageKey(key, productId) {
+    if (productId) {
         try {
-            const locStorage = JSON.parse(localStorage.getItem(key));
-            const index = locStorage.indexOf(value);
-            locStorage.splice(index, 1);
-            setLocStorage(key, locStorage);
-
+            const locStorage = JSON.parse(localStorage.getItem(key)) || [];
+            const index = locStorage.findIndex(product => product.id === productId);
+            if (index !== -1) {
+                locStorage.splice(index, 1);
+                setLocStorage(key, locStorage);
+            } else {
+                console.warn(`Product with ID: ${productId} not found in localStorage for key: ${key}`);
+            }
         } catch (error) {
             console.error('Error deleting from localStorage:', error);
         }

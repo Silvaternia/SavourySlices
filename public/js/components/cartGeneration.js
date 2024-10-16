@@ -25,7 +25,7 @@ export async function generateCart(products) {
             <div class="text-right">
                 <p class="text-lg font-semibold">€${product.price * product.count}</p>
                 <div class="inline-flex flex-col gap-2 sm:gap-4 sm:flex-row">
-                    <button data-product-id="${product.id}" class="mt-2 order-1 remove-product bg-red-500 text-offWhite px-2.5 py-1 sm:px-4 sm:py-2 rounded">
+                    <button data-product-id="${product.id}" class="mt-2 order-1 deleteProduct bg-red-500 text-offWhite px-2.5 py-1 sm:px-4 sm:py-2 rounded">
                         <i class="ph ph-trash"></i>
                     </button>
                     <span class="sr-only">Remove Button</span>
@@ -36,7 +36,7 @@ export async function generateCart(products) {
 
         container.appendChild(cart);
 
-        document.querySelectorAll('.remove-product[data-product-id]').forEach(button => {
+        document.querySelectorAll('.deleteProduct[data-product-id]').forEach(button => {
             button.addEventListener('click', async (event) => {
                 const productId = event.currentTarget.getAttribute('data-product-id');
                 removeFromCart(productId);

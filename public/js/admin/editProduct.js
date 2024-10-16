@@ -10,7 +10,7 @@ export async function editProduct(productId) {
     function isValid(value) {
         return value !== null && value !== undefined && value !== '';
     }
-    
+
     function getUpdatedValue(elementId, defaultValue) {
         const element = document.getElementById(elementId);
         return isValid(element.value) ? element.value : defaultValue;
@@ -31,5 +31,3 @@ export async function editProduct(productId) {
         location.reload(); // I had to add location.reload because the Flowbite model wasn't working after a remove
     }
 }
-
-
