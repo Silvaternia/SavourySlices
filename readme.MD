@@ -2,9 +2,14 @@
 
 This is a simple webshop project built using HTML, JavaScript, and TailwindCSS.
 
-The project has the following functionalities: adding, editing, and removing products and you can manage your shopping cart
+The project has the following functionalities: adding, editing, and removing products and you can manage your shopping cart.
 
-## Getting tarted
+The project is currently in progress. On November 12, 2024, I added my assignment version to GitHub. Starting from November 12, 2024, I will focus on improving the project by:
+
+   - Cleaning up and fixing the exiting code
+   - Redesigning 
+
+<!-- ## Getting tarted
 
 follow the steps below to get started:
 
@@ -47,4 +52,4 @@ follow the steps below to get started:
    ```
    npm run build
    ```
-
+ -->
