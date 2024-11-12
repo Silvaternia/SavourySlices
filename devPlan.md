@@ -4,7 +4,7 @@
 
 **Butcher / Meat Shop**
 
-## Functions and goals
+## Functions
 
 ### User functions
 
@@ -23,7 +23,6 @@
 - CSS
 - TailwindCSS
 - Figma
-- Flowbite ( For the modal component )
 
 ## Development phase
 
@@ -31,7 +30,7 @@
 
 ### Step 2: Seeking inspiration & thinking about features
 
-### Step 3: Design 
+### Step 3: Design website
 
 ### Step 4: Creating the  folder structure
 

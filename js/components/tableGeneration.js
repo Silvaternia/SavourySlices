@@ -1,4 +1,4 @@
-export async function generateTable(products) {
+export default async function generateTable(products) {
     const table = document.querySelector('table');
     const tbody = table.querySelector('tbody');
     tbody.innerHTML = '';
@@ -14,13 +14,17 @@ export async function generateTable(products) {
             <td class="px-6 py-3">${product.image}</td>
             <td class="px-6 py-3">${product.stock}</td>
             <td class="flex gap-8">
-                <button data-product-id="${product.id}" data-modal-target="form-input-modal" data-modal-toggle="form-input-modal">
+                <button data-product-id="${product.id}" id="editProduct"
+                data-modal-target="form-input-modal" data-modal-toggle="form-input-modal">
                     Edit
                 </button>
-                <button id="deleteProduct" class="bg-red-700 text-offWhite px-2.5 py-2.5 sm:px-4 sm:py-3 rounded inline-flex items-center justify-center" data-product-id="${product.id}">
+
+                <button id="deleteProduct" class="bg-red-700 text-offWhite px-2.5 py-2.5 
+                sm:px-4 sm:py-3 rounded inline-flex items-center justify-center" data-product-id="${product.id}">
                     <i class="ph ph-trash"></i>
                     <span class="sr-only">Remove Button</span>
                 </button>
+                
             </td>
         `;
         tbody.appendChild(tr);

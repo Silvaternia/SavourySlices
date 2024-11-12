@@ -1,57 +1,77 @@
 import { loadCartData, getCartProducts } from './data/loadShopCart.js';
-import { setLocStorage, getLocStorage } from './data/locStorage.js';
+import { setLocStorage, getLocStorage, remFromCart } from './data/locStorage.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const buttonOrder = document.getElementById('confirmOrder');
-    const clearCart = document.getElementById('clearCart');
     await loadCartData();
-
-    ButtonVisibility();
-    confirmClear(clearCart);
-    confirmOrder(buttonOrder);
-
+    buttonActions();
 });
 
-async function ButtonVisibility() {
-    const cartButtonContainer = document.getElementById('cartButtonContainer');
-    const cartData = await getCartProducts();
+function buttonActions() {
+    document.querySelector('section').addEventListener('click', async (event) => {
+        const target = event.target.closest('button');
+        if (!target) return;
 
-    cartButtonContainer.classList.replace('hidden', cartData.length > 0 ? 'flex' : 'hidden');
-    cartButtonContainer.classList.replace('flex', cartData.length === 0 ? 'hidden' : 'flex');
+        if (target.id === 'deleteProduct') {
+            remFromCart(target.dataset.productId);
+            await loadCartData();
+        }
+        if (target.id === 'clearCart') {
+            localStorage.removeItem('cart');
+            await loadCartData();
+        }
+        if (target.id === 'confirmOrder') {
+            confirmOrder();
+        }
+    });
 }
 
-function confirmOrder(buttonOrder) {
+async function confirmOrder() {
+    const orders = getLocStorage('orders') || [];
+    const cartProducts = await getCartProducts();
 
-    const formatOrder = (cart, orderCount) => ({
+    const orderTotalPrice = cartProducts.reduce((sum, product) => sum + (product.price * product.count), 0);
+
+    const formatOrder = (totalPrice, orderCount) => ({
         orderId: orderCount + 1,
-        total: cart.join(''),
-        date: new Date().toLocaleString()
+        total: totalPrice.toFixed(2),
+        date: new Date().toLocaleString(),
     });
 
-    if (buttonOrder) {
-        buttonOrder.addEventListener('click', async () => {
-            const orders = JSON.parse(localStorage.getItem('orders')) || [];
-            const cart = await getLocStorage('cart') || [];
+    const formattedOrder = formatOrder(orderTotalPrice, orders.length);
 
-            const formattedOrder = formatOrder(cart, orders.length);
+    orders.push(formattedOrder);
+    setLocStorage('orders', orders);
 
-            orders.push(formattedOrder);
-            setLocStorage('orders', orders);
-
-            alert('Order confirmed!');
-            localStorage.removeItem('cart');
-            await loadCartData();
-            ButtonVisibility();
-        });
-    }
+    localStorage.removeItem('cart');
+    await loadCartData();
+    displayConfirmation();
 }
 
-function confirmClear(clearCart) {
-    if (clearCart) {
-        clearCart.addEventListener('click', async () => {
-            localStorage.removeItem('cart');
-            await loadCartData();
-            ButtonVisibility();
-        });
-    }
+function displayConfirmation() {
+    const container = document.getElementById('shopCartContainer');
+    container.innerHTML = '';
+
+    const msgDiv = document.createElement('div');
+
+    msgDiv.classList.add('text-center', 'text-xl', 'font-bold', 'text-green-500', 'mt-4');
+    msgDiv.textContent = 'Order Confirmed!';
+
+    msgDiv.innerHTML += returnButton;
+    container.appendChild(msgDiv);
+
+    document.getElementById('returnHome').addEventListener('click', () => {
+        window.location.href = '../index.html';
+    });
 }
+
+const returnButton = `
+ <button id="returnHome" class="mt-4 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+        <div
+            class="inline-flex items-center 
+            justify-center px-8 py-3 text-base font-bold text-center 
+            rounded-lg bg-primary text-darkGrey hover:bg-primaryHover">
+            Return
+            <i class="text-3xl ms-2 ph ph-house"></i>
+        </div>
+    </button>
+`;

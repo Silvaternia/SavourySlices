@@ -31,17 +31,16 @@
                     SavourySlices
                 </div>
 
-                <a href="./shoppingCart.html" class="relative order-1 sm:order-2">
+                <a href="./pages/shoppingCart.html" class="relative order-1 sm:order-2">
                     <i class="text-2xl sm:text-3xl ph ph-shopping-bag-open"></i>
                     <span class="sr-only">Shopping Cart</span>
                     <div class="absolute items-center justify-center hidden w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 rounded-full -top-2 -end-2"
-                        id="cart-indicator">
+                        id="cartIndicator">
                     </div>
                 </a>
 
                 <div class="flex order-2 sm:hidden" id="mobileNavToggle">
-                    <button type="button"
-                        class="text-darkGrey hover:text-darkGrey focus:outline-none focus:text-darkGrey"
+                    <button class="text-darkGrey hover:text-darkGrey focus:outline-none focus:text-darkGrey"
                         aria-label="toggle menu">
                         <i class="text-3xl ph ph-list"></i>
                     </button>
@@ -50,14 +49,16 @@
 
             <nav
                 class="absolute left-0 z-0 hidden w-full px-6 py-4 sm:py-0 sm:px-0 sm:static sm:flex sm:justify-center sm:items-center">
-                <ul class="flex flex-col sm:flex-row" id="headerNav">
+                <ul class="flex flex-col sm:flex-row headerNav">
 
                 </ul>
             </nav>
 
-            <div class="absolute left-0 z-10 hidden w-full px-6 rounded-b-md bg-primary sm:hidden" id="mobileNav">
-                <nav class="flex items-start justify-center w-full pb-2 mt-4 sm:py-0 sm:px-0 sm:hidden">
-                    <ul class="flex flex-col w-full" id="headerNav"></ul>
+
+            <div class="absolute left-0 z-10 hidden w-full px-6 top-10 rounded-b-md bg-primary sm:hidden"
+                id="mobileNav">
+                <nav class="flex items-start justify-center w-full pb-2 mt-4 sm:py-0 sm:px-0">
+                    <ul class="flex flex-col w-full headerNav"></ul>
                 </nav>
             </div>
 
@@ -74,13 +75,13 @@
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex perferendis optio, animi autem maxime qui
                 dolorem unde.
             </p>
-            <button class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
                 <div
                     class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center rounded-lg text-darkGrey bg-secondary hover:bg-primary">
                     Shop now
                     <i class="w-3.5 h-3.5 ms-2 ph ph-arrow-right"></i>
                 </div>
-            </button>
+            </div>
         </div>
         <div
             class="flex flex-col justify-center w-full gap-2 py-4 mx-auto sm:gap-8 md:absolute sm:flex-row sm:px-4 -bottom-16">

@@ -1,6 +1,6 @@
 import { setLocStorage } from '../data/locStorage.js';
-import { fetchProducts } from '../data/fetchProducts.js';
-import { validateInputs } from '../data/validateInput.js';
+import fetchProducts from '../data/fetchProducts.js';
+import validateInputs from '../data/validateInput.js';
 
 function getFormValues() {
     return {
@@ -8,7 +8,7 @@ function getFormValues() {
         description: document.getElementById('description').value,
         price: document.getElementById('price').value,
         stock: document.getElementById('stock').value,
-        image: document.getElementById('image').value
+        image: document.getElementById('image').value,
     };
 }
 
@@ -20,7 +20,7 @@ document.getElementById('addProduct').addEventListener('click', async (event) =>
     if (validateInputs(formValues)) {
         await addProduct(formValues);
     }
-});;
+});
 
 async function addProduct(formValues) {
     const allProducts = await fetchProducts();

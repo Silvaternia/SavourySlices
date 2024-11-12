@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwindcss -->
+    <link rel="stylesheet" href="../css/output.css">
+    <!-- Phospor icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script type="module" src="../js/admin/admin.js"></script>
+
+    <title>Savoury Dashboard</title>
+</head>
+
+<body class="relative flex h-screen">
+
+    <aside id="default-sidebar" class="flex flex-col min-h-screen bg-primary" aria-label="Sidebar">
+        <div class="w-56 h-full px-3 py-4 mt-8">
+            <ul class="space-y-2 font-medium">
+                <li>
+                    <a href="#" class="flex items-center p-2 rounded-lg text-darkGrey hover:bg-secondary ">
+                        <i class="text-2xl ph ph-house text-darkGrey"></i>
+                        <span class="flex ms-3">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="buttonResetStorage"
+                        class="flex items-center p-2 rounded-lg text-darkGrey hover:bg-secondary ">
+                        <i class="text-2xl ph ph-arrow-counter-clockwise text-darkGrey"></i>
+                        <span class="flex ms-3">Reset Storage</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="../pages/addProduct.html"
+                        class="flex items-center p-2 rounded-lg text-darkGrey hover:bg-secondary ">
+                        <i class="text-2xl ph ph-barcode text-darkGrey"></i>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Add products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../pages/allOrders.html"
+                        class="flex items-center p-2 rounded-lg text-darkGrey hover:bg-secondary ">
+                        <i class="text-2xl ph ph-archive text-darkGrey"></i>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Orders</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="flex justify-center w-full mt-8">
+        <section>
+            <table class="w-full text-sm text-left rtl:text-right text-darkGrey">
+                <thead class="text-xs uppercase text-darkGrey">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            ID
+                        </th>
+                        <th class="px-6 py-3">
+                            Product name
+                        </th>
+                        <th class="px-6 py-3">
+                            Description
+                        </th>
+                        <th class="px-6 py-3">
+                            Price
+                        </th>
+                        <th class="px-6 py-3">
+                            image Source
+                        </th>
+                        <th class="px-6 py-3">
+                            Stock
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+
+    <div id="form-input-modal" tabindex="-1" aria-hidden="true"
+        class="absolute top-0 z-50 items-center justify-center hidden w-full h-full max-h-full mx-auto overflow-x-hidden overflow-y-auto bg-black/70">
+
+        <div class="flex items-center justify-center w-full h-full">
+            <div class="relative w-full max-w-md max-h-full p-4">
+
+                <div class="relative rounded-lg shadow bg-offWhite">
+                    <div class="flex items-center justify-between p-4 border-b rounded-t md:p-5">
+                        <h3 class="text-xl font-semibold text-darkGrey">
+                            Product name
+                        </h3>
+                        <button id="closeModal"
+                            class="end-2.5 text-darkGrey bg-transparent rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center ">
+                            <i class="ph ph-x"></i>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <div class="p-4 md:p-5">
+                        <form class="space-y-4" action="#">
+                            <div>
+                                <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Product
+                                    Title</label>
+                                <input type="text" name="title" id="title"
+                                    class="bg-gray-50 border border-gray-300 text-darkGrey text-sm rounded-lg block w-full p-2.5"
+                                    placeholder="Empty" required />
+                            </div>
+
+                            <div>
+                                <label for="description"
+                                    class="block mb-2 text-sm font-medium text-gray-900">Description</label>
+                                <input type="text" name="description" id="description"
+                                    class="bg-gray-50 border border-gray-300 text-darkGrey text-sm rounded-lg block w-full p-2.5"
+                                    placeholder="Empty" required />
+                            </div>
+
+                            <div>
+                                <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Product
+                                    Price</label>
+                                <input type="number" step="0.01" name="price" id="price"
+                                    class="bg-gray-50 border border-gray-300 text-darkGrey text-sm rounded-lg block w-full p-2.5"
+                                    placeholder="Empty" required />
+                            </div>
+
+                            <div>
+                                <label for="stock" class="block mb-2 text-sm font-medium text-gray-900">Product
+                                    Stock</label>
+                                <input type="number" name="stock" id="stock"
+                                    class="bg-gray-50 border border-gray-300 text-darkGrey text-sm rounded-lg block w-full p-2.5"
+                                    placeholder="Empty" required />
+                            </div>
+
+                            <div>
+                                <label for="image" class="block mb-2 text-sm font-medium text-gray-900">image
+                                    src</label>
+                                <input type="text" name="image" id="image"
+                                    class="bg-gray-50 border border-gray-300 text-darkGrey text-sm rounded-lg block w-full p-2.5"
+                                    placeholder="Empty" required />
+                            </div>
+
+                            <button id="confirmEdit"
+                                class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center rounded-lg text-darkGrey bg-secondary hover:bg-primary">
+                                Confirm edit
+                                <i class="w-3.5 h-3.5 ms-2 ph ph-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

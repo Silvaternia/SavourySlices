@@ -1,6 +1,6 @@
-import { fetchProducts } from './data/fetchProducts.js';
+import fetchProducts from './data/fetchProducts.js';
 import { addToCart, updateCartIndicator } from './data/locStorage.js';
-import { generateCards } from './components/cardGeneration.js';
+import generateCards from './components/cardGeneration.js';
 
 function addProductButtonListeners() {
     const productButtons = document.querySelectorAll(`[data-product-id]`);
@@ -10,7 +10,7 @@ function addProductButtonListeners() {
             addToCart(productId);
         });
     });
-};
+}
 
 document.addEventListener('DOMContentLoaded', async () => {
     const products = await fetchProducts();

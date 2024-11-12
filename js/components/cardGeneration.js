@@ -1,4 +1,4 @@
-export function generateCards(products) {
+export default function generateCards(products) {
     const productsArray = Object.values(products);
     const container = document.getElementById('productContainer');
 
@@ -30,7 +30,8 @@ export function generateCards(products) {
             </div>
             
             <button
-                class="text-white m-4 font-medium self-end z-10 rounded-full text-sm p-2 sm:p-2.5 text-center w-fit inline-flex items-center bg-accent"
+                class="text-white m-4 font-medium self-end z-10 rounded-full text-sm p-2 
+                sm:p-2.5 text-center w-fit inline-flex items-center bg-accent"
                 data-product-id="${product.id}">
                 <i class="text-2xl ph ph-plus"></i>
                 <span class="sr-only">Add to cart</span>

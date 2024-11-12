@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('mobileNavToggle');
     const mobileCNav = document.getElementById('mobileNav');
-    const navContainers = document.querySelectorAll('#headerNav');
+    const navContainers = document.querySelectorAll('.headerNav');
 
     menuToggle.addEventListener('click', () => {
         mobileCNav.classList.toggle('hidden');
     });
 
     const navItems = {
-        'Home': 'index.html',  
-        'Categories': '#',
-        'Best sellers': '#',
-        'Search': '#',
-        'Contact': '#',
-        'About': '#'
+        Home: '../index.html',
+        Categories: '#',
+        BestSellers: '#',
+        Search: '#',
+        Contact: '#',
+        About: '#',
     };
 
     const createNavItem = (name, url) => {

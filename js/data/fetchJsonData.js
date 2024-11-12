@@ -6,5 +6,6 @@ export default async function fetchJsonData() {
         return data;
     } catch (error) {
         console.error('There is a fetch problem:', error);
+        return null;
     }
 }

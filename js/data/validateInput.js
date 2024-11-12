@@ -1,9 +1,16 @@
-export function validateInputs({ title, description, price, stock, image }) {
-    // Using regex to validate 
+export default function validateInputs({
+    title,
+    description,
+    price,
+    stock,
+    image,
+}) {
+    // Using regex to validate ( regex for the win )
     const regexFormat = /^[a-zA-Z0-9\s.\-_:@/?&=+%$#*]+$/i;
+
     const isValidString = (str) => regexFormat.test(str);
-    const isValidFloat = (num) => !isNaN(num) && parseFloat(num) == num;
-    const isValidInt = (num) => !isNaN(num) && parseInt(num) == num;
+    const isValidFloat = (num) => !Number.isNaN(num) && parseFloat(num) == num;
+    const isValidInt = (num) => !Number.isNaN(num) && parseInt(num) == num;
 
     if (title === '' || description === '' || price === '' || stock === '' || image === '') {
         alert('All fields must be filled out.');

@@ -1,7 +1,7 @@
 import { setLocStorage } from "../data/locStorage.js";
-import { updateProductTable } from "../data/updateStorage.js";
+import updateProductTable from "../data/updateStorage.js";
 
-export async function editProduct(productId) {
+export default async function editProduct(productId) {
     const productsData = localStorage.getItem('products');
     const products = productsData ? JSON.parse(productsData) : [];
     const numericProductId = parseInt(productId, 10);
@@ -21,13 +21,15 @@ export async function editProduct(productId) {
             id: productId,
             title: getUpdatedValue('title', products[index].title),
             description: getUpdatedValue('description', products[index].description),
-            price: isValid(document.getElementById('price').value) ? parseFloat(document.getElementById('price').value) : products[index].price,
-            stock: isValid(document.getElementById('stock').value) ? parseInt(document.getElementById('stock').value, 10) : products[index].stock,
-            image: getUpdatedValue('image', products[index].image)
+            price: isValid(document.getElementById('price').value) ?
+                parseFloat(document.getElementById('price').value) : products[index].price,
+            stock: isValid(document.getElementById('stock').value) ?
+                parseInt(document.getElementById('stock').value, 10) : products[index].stock,
+            image: getUpdatedValue('image', products[index].image),
         };
 
         setLocStorage('products', products);
         await updateProductTable(products);
-        location.reload(); // I had to add location.reload because the Flowbite model wasn't working after a remove
+        window.location.reload();
     }
 }
