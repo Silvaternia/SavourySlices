@@ -1,9 +1,0 @@
-{
-    "recommendations": [
-        "ms-python.autopep8",
-        "batisteo.vscode-django",
-        "editorconfig.editorconfig",
-        "charliermarsh.ruff",
-        "stylelint.vscode-stylelint"
-    ]
-}
