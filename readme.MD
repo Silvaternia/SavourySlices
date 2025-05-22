@@ -10,5 +10,5 @@ Now with more experience under my belt and some new tech + learning new tech whi
 
 Week 21
 
--   Fully working Navigation bar. Responsive & Dynamic (20/05/2025 basic React-router-dom got added, got no clue how to intergrade it with the header.tsx gonna find out tomorrow ( got 0 motivation to code so I am glad I spend around an hour on this lmao))
+-   Fully working Navigation bar. Responsive & Dynamic (20/05/2025 basic React-router-dom got added, 22/05/2025: Got the navbar workin
 -   Hero section completed. CTA, Proper image optimization
